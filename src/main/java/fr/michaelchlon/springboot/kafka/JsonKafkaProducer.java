@@ -26,7 +26,7 @@ public class JsonKafkaProducer {
     LOGGER.info(String.format("#### -> USER Message sent: %s", user.toString()));
 
     Message<User> message =
-        MessageBuilder.withPayload(user).setHeader(KafkaHeaders.TOPIC, "java_guides").build();
+        MessageBuilder.withPayload(user).setHeader(KafkaHeaders.TOPIC, "java_guides_json").build();
 
     kafkaTemplate.send(message);
     LOGGER.info(String.format("#### -> Message sent: %s", message));
